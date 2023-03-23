@@ -1,17 +1,12 @@
----
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.1.0
+    rev: v4.4.0
     hooks:
       - id: check-yaml
       - id: check-merge-conflict
       - id: trailing-whitespace
-  - repo: local
+  - repo: https://github.com/navhealth/git-hooks
+    rev: v0.2.0
     hooks:
       - id: circleci-config-validate
-        name: CircleCI config validation
-        description: Test if the CircleCI config is well formed.
-        entry: hooks/circleci-config-validate.sh
-        language: script
-        files: ^.circleci/config.yml$
-
+      - id: circleci-orb-validate
