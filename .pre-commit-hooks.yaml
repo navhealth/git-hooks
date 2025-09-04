@@ -66,3 +66,10 @@
   types: [shell]
   exclude_types: [csh, perl, python, ruby, tcsh, zsh]
   args: ['-l', '-i', '2', '-ci']
+
+- id: forbid-db-references
+  name: Forbid database references
+  description: Prevent committing code with dev/int/prod database.schema.table references
+  entry: hooks/forbid-db-references.sh
+  language: script
+  types: [text]
