@@ -15,3 +15,13 @@ repos:
         language: script
         files: ^.circleci/config.yml$
 
+  - repo: local
+    hooks:
+      - id: forbid-db-references
+        name: Forbid database references
+        description: Prevent committing code with dev/int/prod database.schema.table references
+        entry: hooks/forbid-db-references.sh
+        language: script
+        types: [text]
+
+
